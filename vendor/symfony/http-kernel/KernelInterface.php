@@ -11,9 +11,9 @@
 
 namespace Symfony\Component\HttpKernel;
 
-use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
+use Symfony\Component\Config\Loader\LoaderInterface;
 
 /**
  * The Kernel is the heart of the Symfony system.
@@ -27,7 +27,7 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     /**
      * Returns an array of bundles to register.
      *
-     * @return iterable|BundleInterface[] An iterable of bundle instances
+     * @return BundleInterface[] An array of bundle instances
      */
     public function registerBundles();
 
@@ -56,19 +56,15 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     public function getBundles();
 
     /**
-     * Returns a bundle and optionally its descendants by its name.
+     * Returns a bundle.
      *
-     * The second argument is deprecated as of 3.4 and will be removed in 4.0. This method
-     * will always return an instance of BundleInterface in 4.0.
+     * @param string $name Bundle name
      *
-     * @param string $name  Bundle name
-     * @param bool   $first Whether to return the first bundle only or together with its descendants
-     *
-     * @return BundleInterface|BundleInterface[] A BundleInterface instance or an array of BundleInterface instances if $first is false
+     * @return BundleInterface A BundleInterface instance
      *
      * @throws \InvalidArgumentException when the bundle is not enabled
      */
-    public function getBundle($name, $first = true);
+    public function getBundle($name);
 
     /**
      * Returns the file path for a given resource.
@@ -131,14 +127,14 @@ interface KernelInterface extends HttpKernelInterface, \Serializable
     /**
      * Gets the current container.
      *
-     * @return ContainerInterface|null A ContainerInterface instance or null when the Kernel is shutdown
+     * @return ContainerInterface A ContainerInterface instance
      */
     public function getContainer();
 
     /**
      * Gets the request start time (not available if debug is disabled).
      *
-     * @return float The request start timestamp
+     * @return int The request start timestamp
      */
     public function getStartTime();
 

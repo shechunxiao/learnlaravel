@@ -30,9 +30,6 @@ class TranslationWriterTest extends TestCase
         $writer->write(new MessageCatalogue('en'), 'test');
     }
 
-    /**
-     * @group legacy
-     */
     public function testDisableBackup()
     {
         $nonBackupDumper = new NonBackupDumper();
@@ -49,7 +46,7 @@ class TranslationWriterTest extends TestCase
 
 class NonBackupDumper implements DumperInterface
 {
-    public function dump(MessageCatalogue $messages, $options = [])
+    public function dump(MessageCatalogue $messages, $options = array())
     {
     }
 }
@@ -58,7 +55,7 @@ class BackupDumper implements DumperInterface
 {
     public $backup = true;
 
-    public function dump(MessageCatalogue $messages, $options = [])
+    public function dump(MessageCatalogue $messages, $options = array())
     {
     }
 

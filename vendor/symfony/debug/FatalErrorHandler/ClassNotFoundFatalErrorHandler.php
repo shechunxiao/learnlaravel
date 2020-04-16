@@ -11,11 +11,11 @@
 
 namespace Symfony\Component\Debug\FatalErrorHandler;
 
-use Composer\Autoload\ClassLoader as ComposerClassLoader;
-use Symfony\Component\ClassLoader\ClassLoader as SymfonyClassLoader;
-use Symfony\Component\Debug\DebugClassLoader;
 use Symfony\Component\Debug\Exception\ClassNotFoundException;
 use Symfony\Component\Debug\Exception\FatalErrorException;
+use Symfony\Component\Debug\DebugClassLoader;
+use Composer\Autoload\ClassLoader as ComposerClassLoader;
+use Symfony\Component\ClassLoader\ClassLoader as SymfonyClassLoader;
 
 /**
  * ErrorHandler for classes that do not exist.
@@ -29,20 +29,20 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
      */
     public function handleError(array $error, FatalErrorException $exception)
     {
-        $messageLen = \strlen($error['message']);
+        $messageLen = strlen($error['message']);
         $notFoundSuffix = '\' not found';
-        $notFoundSuffixLen = \strlen($notFoundSuffix);
+        $notFoundSuffixLen = strlen($notFoundSuffix);
         if ($notFoundSuffixLen > $messageLen) {
-            return null;
+            return;
         }
 
         if (0 !== substr_compare($error['message'], $notFoundSuffix, -$notFoundSuffixLen)) {
-            return null;
+            return;
         }
 
-        foreach (['class', 'interface', 'trait'] as $typeName) {
+        foreach (array('class', 'interface', 'trait') as $typeName) {
             $prefix = ucfirst($typeName).' \'';
-            $prefixLen = \strlen($prefix);
+            $prefixLen = strlen($prefix);
             if (0 !== strpos($error['message'], $prefix)) {
                 continue;
             }
@@ -71,8 +71,6 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
 
             return new ClassNotFoundException($message, $exception);
         }
-
-        return null;
     }
 
     /**
@@ -85,24 +83,24 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
      *
      * @return array An array of possible fully qualified class names
      */
-    private function getClassCandidates($class)
+    private function getClassCandidates(string $class): array
     {
-        if (!\is_array($functions = spl_autoload_functions())) {
-            return [];
+        if (!is_array($functions = spl_autoload_functions())) {
+            return array();
         }
 
         // find Symfony and Composer autoloaders
-        $classes = [];
+        $classes = array();
 
         foreach ($functions as $function) {
-            if (!\is_array($function)) {
+            if (!is_array($function)) {
                 continue;
             }
             // get class loaders wrapped by DebugClassLoader
             if ($function[0] instanceof DebugClassLoader) {
                 $function = $function[0]->getClassLoader();
 
-                if (!\is_array($function)) {
+                if (!is_array($function)) {
                     continue;
                 }
             }
@@ -126,20 +124,13 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
         return array_unique($classes);
     }
 
-    /**
-     * @param string $path
-     * @param string $class
-     * @param string $prefix
-     *
-     * @return array
-     */
-    private function findClassInPath($path, $class, $prefix)
+    private function findClassInPath(string $path, string $class, string $prefix): array
     {
-        if (!$path = realpath($path.'/'.strtr($prefix, '\\_', '//')) ?: realpath($path.'/'.\dirname(strtr($prefix, '\\_', '//'))) ?: realpath($path)) {
-            return [];
+        if (!$path = realpath($path.'/'.strtr($prefix, '\\_', '//')) ?: realpath($path.'/'.dirname(strtr($prefix, '\\_', '//'))) ?: realpath($path)) {
+            return array();
         }
 
-        $classes = [];
+        $classes = array();
         $filename = $class.'.php';
         foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($path, \RecursiveDirectoryIterator::SKIP_DOTS), \RecursiveIteratorIterator::LEAVES_ONLY) as $file) {
             if ($filename == $file->getFileName() && $class = $this->convertFileToClass($path, $file->getPathName(), $prefix)) {
@@ -150,18 +141,11 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
         return $classes;
     }
 
-    /**
-     * @param string $path
-     * @param string $file
-     * @param string $prefix
-     *
-     * @return string|null
-     */
-    private function convertFileToClass($path, $file, $prefix)
+    private function convertFileToClass(string $path, string $file, string $prefix): ?string
     {
-        $candidates = [
+        $candidates = array(
             // namespaced class
-            $namespacedClass = str_replace([$path.\DIRECTORY_SEPARATOR, '.php', '/'], ['', '', '\\'], $file),
+            $namespacedClass = str_replace(array($path.DIRECTORY_SEPARATOR, '.php', '/'), array('', '', '\\'), $file),
             // namespaced class (with target dir)
             $prefix.$namespacedClass,
             // namespaced class (with target dir and separator)
@@ -172,7 +156,7 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
             str_replace('\\', '_', $prefix.$namespacedClass),
             // PEAR class (with target dir and separator)
             str_replace('\\', '_', $prefix.'\\'.$namespacedClass),
-        ];
+        );
 
         if ($prefix) {
             $candidates = array_filter($candidates, function ($candidate) use ($prefix) { return 0 === strpos($candidate, $prefix); });
@@ -187,11 +171,7 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
             }
         }
 
-        try {
-            require_once $file;
-        } catch (\Throwable $e) {
-            return null;
-        }
+        require_once $file;
 
         foreach ($candidates as $candidate) {
             if ($this->classExists($candidate)) {
@@ -202,12 +182,7 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
         return null;
     }
 
-    /**
-     * @param string $class
-     *
-     * @return bool
-     */
-    private function classExists($class)
+    private function classExists(string $class): bool
     {
         return class_exists($class, false) || interface_exists($class, false) || trait_exists($class, false);
     }

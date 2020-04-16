@@ -14,5 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::any('/test','FirstController@index');
-Route::any('/job','FirstController@job');
+Route::any('/index','FirstController@index');
+Route::any('/upload','FirstController@upload');
+Route::any('/import','FirstController@import');
