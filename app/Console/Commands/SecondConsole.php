@@ -39,5 +39,6 @@ class SecondConsole extends Command
     {
         //
         file_put_contents('./made.txt','测试\\r\\n',FILE_APPEND);
+        echo 'test'.'<br/>';
     }
 }

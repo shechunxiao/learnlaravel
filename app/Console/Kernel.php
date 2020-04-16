@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->command('SecondConsole')->everyMinute()->withoutOverlapping()->sendOutputTo('./secondconsole.txt');
+        $schedule->command('SecondConsole')->everyMinute()->withoutOverlapping()->appendOutputTo('./secondconsole.txt');
     }
 
     /**
