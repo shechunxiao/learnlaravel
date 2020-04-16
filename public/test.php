@@ -1,3 +1,2 @@
 <?php
-echo 111;
-echo 22;
+file_put_contents('./ceshiphp.txt',"测试/r/n",FILE_APPEND);
