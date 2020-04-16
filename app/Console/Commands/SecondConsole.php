@@ -38,6 +38,6 @@ class SecondConsole extends Command
     public function handle()
     {
         //
-        file_put_contents('ceshi.txt',"测试/r/n",FILE_APPEND);
+        file_put_contents('./made.txt','测试\\r\\n',FILE_APPEND);
     }
 }
