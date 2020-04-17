@@ -25,4 +25,7 @@ class FirstController extends Controller
         dump(session('name'));
         dump('为啥不存到数据库中');
     }
+    public function get(){
+        dump(session('name'));
+    }
 }
