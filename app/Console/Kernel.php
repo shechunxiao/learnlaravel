@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('SecondConsole')->everyMinute()->withoutOverlapping()->appendOutputTo('./secondconsole.txt');
-        $schedule->job(new ProcessPodcast('1'))->everyMinute()->withoutOverlapping();
+//        $schedule->job(new ProcessPodcast('1'))->everyMinute()->withoutOverlapping(); //执行队列任务
     }
 
     /**
