@@ -13,8 +13,8 @@ class FirstController extends Controller
         file_put_contents('./test.txt',"测试/r/n",FILE_APPEND);
     }
     public function job(){
-        ProcessPodcast::dispatch(22222)->onConnection('database');
-//        dispatch(new ProcessPodcast(1))->onConnection('database');
+        //delay延迟5秒
+        ProcessPodcast::dispatch(22222)->onConnection('database')->delay(5);
     }
     public function  test(){
         DB::table('test_job')->insert(['name'=>'队列测试']);
