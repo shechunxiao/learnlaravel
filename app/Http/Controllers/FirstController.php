@@ -19,4 +19,7 @@ class FirstController extends Controller
     public function  test(){
         DB::table('test_job')->insert(['name'=>'队列测试']);
     }
+    public function set(){
+        session('id','111');
+    }
 }
