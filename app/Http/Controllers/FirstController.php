@@ -21,5 +21,8 @@ class FirstController extends Controller
     }
     public function set(){
         session(['id'=>1,'name'=>'张三']);
+        dump(session('id'));
+        dump(session('name'));
+        dump('为啥不存到数据库中');
     }
 }
