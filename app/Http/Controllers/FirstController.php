@@ -20,6 +20,6 @@ class FirstController extends Controller
         DB::table('test_job')->insert(['name'=>'队列测试']);
     }
     public function set(){
-        session('id','111');
+        session(['id'=>1,'name'=>'张三']);
     }
 }
