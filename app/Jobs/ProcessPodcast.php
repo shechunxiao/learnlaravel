@@ -7,6 +7,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\DB;
 
 class ProcessPodcast implements ShouldQueue
 {
@@ -32,5 +33,6 @@ class ProcessPodcast implements ShouldQueue
     {
         //
         echo 'do something';
+        DB::table('test_job')->insert(['name'=>'队列测试']);
     }
 }
