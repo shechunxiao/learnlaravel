@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\SecondConsole;
+use App\Jobs\ProcessPodcast;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -29,6 +30,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('SecondConsole')->everyMinute()->withoutOverlapping()->appendOutputTo('./secondconsole.txt');
+        $schedule->job(new ProcessPodcast('1'))->everyMinute()->withoutOverlapping();
     }
 
     /**
