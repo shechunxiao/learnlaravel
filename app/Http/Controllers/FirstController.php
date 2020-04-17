@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\ProcessPodcast;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FirstController extends Controller
 {
@@ -13,5 +14,8 @@ class FirstController extends Controller
     }
     public function job(){
         ProcessPodcast::dispatch(1)->onConnection('database');
+    }
+    public function  test(){
+        DB::table('test_job')->insert(['name'=>'队列测试']);
     }
 }
