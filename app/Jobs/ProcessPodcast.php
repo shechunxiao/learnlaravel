@@ -22,6 +22,7 @@ class ProcessPodcast implements ShouldQueue
     {
         //
         $this->id = $id;
+        echo $id.'这里是id';
     }
 
     /**
