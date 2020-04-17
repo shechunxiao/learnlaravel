@@ -14,7 +14,7 @@ class FirstController extends Controller
     }
     public function job(){
 //        ProcessPodcast::dispatch(1)->onConnection('database');
-        $this->dispatch(new ProcessPodcast(1))->onConnection('database');
+        dispatch(new ProcessPodcast(1))->onConnection('database');
     }
     public function  test(){
         DB::table('test_job')->insert(['name'=>'队列测试']);
