@@ -1,0 +1,226 @@
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+
+   Symfony\Component\Debug\Exception\FatalThrowableError  : Class 'Aws\Sqs\SqsClient' not found
+
+  at /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php: 26
+    22|             $config['credentials'] = Arr::only($config, ['key', 'secret']);
+    23|         }
+    24| 
+    25|         return new SqsQueue(
+  > 26|             new SqsClient($config), $config['queue'], $config['prefix'] ?? ''
+    27|         );
+    28|     }
+    29| 
+    30|     /**
+
+  Exception trace:
+
+  1   Illuminate\Queue\Connectors\SqsConnector::connect()
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 157
+
+  2   Illuminate\Queue\QueueManager::resolve("sqs")
+      /usr/share/nginx/html/learnlaravel/vendor/laravel/framework/src/Illuminate/Queue/QueueManager.php : 138
+
+  Please use the argument -v to see more details.
+[2020-04-17 06:01:38][8] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:01:38][8] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:01:50][9] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:01:50][9] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:01:59][10] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:01:59][11] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:01:59][10] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:01:59][11] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:01:59][12] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:01:59][12] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:20][13] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:20][13] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:20][14] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:20][14] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][15] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][16] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][15] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][17] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][16] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][18] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][17] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][19] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][18] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][19] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][20] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][21] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][20] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][22] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][21] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][23] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][22] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][23] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][24] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][25] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:02:23][24] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:02:23][25] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:04:17][26] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:04:17][27] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:04:17][26] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:04:17][27] Processed:  App\Jobs\ProcessPodcast
+[2020-04-17 06:04:17][28] Processing: App\Jobs\ProcessPodcast
+do something[2020-04-17 06:04:17][28] Processed:  App\Jobs\ProcessPodcast
