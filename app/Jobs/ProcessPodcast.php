@@ -35,4 +35,8 @@ class ProcessPodcast implements ShouldQueue
         echo 'do something';
         DB::table('test_job')->insert(['name'=>'队列测试']);
     }
+    public function fail($exception = null)
+    {
+        DB::table("test_job")->insert(['name'=>'失败']);
+    }
 }
