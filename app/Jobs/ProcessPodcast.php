@@ -31,5 +31,6 @@ class ProcessPodcast implements ShouldQueue
     public function handle()
     {
         //
+        echo 'do something';
     }
 }

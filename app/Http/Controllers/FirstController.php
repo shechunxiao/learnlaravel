@@ -12,6 +12,6 @@ class FirstController extends Controller
         file_put_contents('./test.txt',"测试/r/n",FILE_APPEND);
     }
     public function job(){
-        ProcessPodcast::dispatch(1);
+        ProcessPodcast::dispatch(1)->onConnection('database');
     }
 }
